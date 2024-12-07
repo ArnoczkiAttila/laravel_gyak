@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,5 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/project/create',[ProjectController::class,'create'])->name('project.create');
+Route::post('/task/create',[TaskController::class,'create'])->name('task.create');
 
 require __DIR__.'/auth.php';
