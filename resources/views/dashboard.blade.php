@@ -41,8 +41,8 @@
                                     @if (count($projects) != 0)
                                         @foreach ($projects as $project)
                                             <div class="bg-gray-50 my-2 p-2 hover:cursor-pointer border-indigo-200 rounded-md shadow-sm border-2" onclick="console.log(this.children[0].checked = !this.children[0].checked)">
-                                                <input type="hidden" name="project[id][]" value="{{$project->id}}">
-                                                <input type="checkbox" name="project[checkbox][]" id="" class="float-right border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"> 
+                                                <input type="hidden" name="project[{{$loop->index}}][id]" value="{{$project->id}}">
+                                                <input type="checkbox" name="project[{{$loop->index}}][checkbox]" id="" class="float-right border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"> 
                                                 <h2 class="font-semibold text-lg my-2">{{$project->name}}</h2>                          
                                                 <hr>
                                                 Leírás:
